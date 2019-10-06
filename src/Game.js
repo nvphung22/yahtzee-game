@@ -11,7 +11,9 @@ class Game extends Component {
     super(props);
     this.state = {
       dice: Array.from({ length: NUM_DICE }),
+      // [undefined, undefined, undefined, undefined, undefined]
       locked: Array(NUM_DICE).fill(false),
+      // [false, false, false, false, false]
       rollsLeft: NUM_ROLLS,
       rolling: false,
       scores: {
@@ -30,7 +32,6 @@ class Game extends Component {
         chance: undefined
       }
     };
-    console.log(this.state);
     this.roll = this.roll.bind(this);
     this.doScore = this.doScore.bind(this);
     this.toggleLocked = this.toggleLocked.bind(this);
